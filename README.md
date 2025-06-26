@@ -54,7 +54,7 @@ Dataset 5: bio-Human-Gene1
  What We Found
 We tested each algorithm on every dataset and recorded the runtime.
 
-Prim’s Algorithm was the fastest overall.
+Prim’s and kruskals algorithm were the best in practice .
 
 Borůvka performed well on small datasets but slowed down on larger ones.
 
