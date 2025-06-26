@@ -1,96 +1,89 @@
-# MST-Bio-Celegans-Project
-# 🧠 CSAI335 Mini-Project: MST Algorithms on a Biological Network
+MST-Bio-Celegans-Project
+CSAI335 Mini-Project: MST Algorithms on Biological Networks
 
-## 📘 Project Summary
+Project Summary
+In this project, we tested and compared five different Minimum Spanning Tree (MST) algorithms using real biological networks. We used datasets based on the neural structure of a worm called C. elegans, along with some larger networks like gene interactions in humans.
 
-This project is about using five different **Minimum Spanning Tree (MST)** algorithms to analyze a real biological network. We used the **bio-CE-GT** dataset, which is based on the neural connections of a roundworm called **C. elegans**.
+The goal was to see how each algorithm performs, how fast they are, and how they build the MST step-by-step.
 
-MSTs help us find the shortest way to connect all points (nodes) in a network without making any loops, and with the least total weight.
+Datasets Used
+We used five datasets that vary in size and complexity:
 
----
+bio-CE-GT – original C. elegans neural graph
 
-## 🧬 About the Dataset
+bio-CE-GN – another version of the C. elegans dataset
 
-The **C. elegans** network shows how neurons are connected in a small worm. It's popular in science because it's one of the most complete neural maps we have.
+bio-WormNet-v3 – worm gene interaction network
 
-### 🔍 Why It’s Useful:
+bio-Human-Gene1 – human gene interaction network
 
-- 🧠 Helps understand how brains and networks pass information  
-- 🧬 Can be used in biology and bioinformatics  
-- 🤖 Inspires AI and neural network designs  
-- ⚙️ Good for testing algorithms on real-world systems  
+bio-celegans.mtx – matrix file for the C. elegans graph
 
----
+These networks are useful because they are real-world and test how the algorithms scale on different sizes.
 
-## 🌲 MST Algorithms Used
+Algorithms We Used
+Here’s a quick explanation of each algorithm we tested:
 
-Here’s a quick summary of the five algorithms I tested:
+Kruskal’s Algorithm
+Sorts all the edges by weight and adds the smallest ones that don’t form a cycle. Good for sparse graphs.
 
-### 1. **Kruskal’s Algorithm**
-- Sorts all edges by weight  
-- Keeps adding the smallest edges that don’t make loops  
-- Works well on sparse graphs
+Prim’s Algorithm
+Starts from one node and always connects to the nearest neighbor that’s not in the tree yet.
 
-### 2. **Prim’s Algorithm**
-- Starts from a node and grows the tree  
-- Always connects to the nearest neighbor  
-- Fast with heaps/priority queues
+Borůvka’s Algorithm
+Each node (or part) picks the cheapest edge to connect with another part. Repeats until everything is connected.
 
-### 3. **Borůvka’s Algorithm**
-- Every part of the graph picks its cheapest edge  
-- All parts merge until one MST is left  
-- Great for parallel computing
+Reverse-Delete Algorithm
+Starts with all edges and removes the biggest ones if the graph stays connected. Slower but simple.
 
-### 4. **Reverse-Delete Algorithm**
-- Starts with all edges  
-- Keeps removing the biggest ones if the graph stays connected  
-- Simple but slower
+Karger’s Algorithm
+This one doesn’t give an MST. It randomly merges nodes and gives a minimum cut — the smallest set of edges that split the graph into two parts.
 
-### 5. **Karger’s Algorithm**
-- Contracts edges randomly until only two nodes are left  
-- Finds a **minimum cut**, not an MST  
-- Good for estimating network partitions
+Videos and Code Links
+We created videos that show how each algorithm builds the MST step-by-step. We saved a frame every 50 or 100 edges so it’s easier to follow the process visually.
 
----
+Dataset 1: bio-celegans.mtx
 
-## CODE AND VIDEOS OF DATASET 1 
-https://drive.google.com/drive/folders/1YAAQqn3oZ0bmL7RGd_RA_tiSGUGrPbMs?usp=drive_link
-## CODE AND VIDEOS OF DATASET 2
-https://drive.google.com/drive/folders/1AJoxipjR-vKs3dH0UDNftoL3IfYiz2pk?usp=drive_link
-## CODE AND VIDEOS OF DATASET 3
-https://drive.google.com/drive/folders/1hKSmMBib6jEOU12XW09Yh5PkMUM-jgsW?usp=drive_link
-## CODE AND VIDEOS OF DATASET 4
+Dataset 2: bio-CE-GT
 
-## CODE AND VIDEOS OF DATASET 5
+Dataset 3: bio-CE-GN
 
+Dataset 4: bio-WormNet-v3
 
-## 📊 Performance Testing
+Dataset 5: bio-Human-Gene1
 
-I created graphs of different sizes and timed how long each algorithm took.
+What We Found
+We ran all algorithms on each dataset and measured how long they took.
 
-### ✅ Result:
-**Prim’s Algorithm** was the fastest for the types of graphs we worked with (sparse and real-world-like).
+Prim’s Algorithm was usually the fastest.
 
----
+Borůvka was okay on small graphs but got slower on big ones.
 
-## 🎥 MST Visual Videos
+Karger’s Algorithm worked differently — it gave the minimum cut, not a tree.
 
-I made videos that show how each MST builds up step-by-step:
-- One edge is added every 50 steps
-- It’s easier to see how the tree forms visually
+We also made line plots to show how the time increased as the dataset size got bigger.
 
----
+Tools We Used
+Python in Google Colab
 
-## 🛠️ Tools I Used
+NetworkX (for graph stuff)
 
-- Python (Google Colab)
-- NetworkX
-- NumPy & SciPy
-- Matplotlib for charts and animations
+SciPy and NumPy
 
----
+Matplotlib (for charts and video animations)
 
-## 👤 About Me
+Team Members
+This project was done by:
 
-This project was done by **[ABEYA MAHMOUD]**, a student in **CSAI335 at NGU, Spring 2025**.
+Abeya Mahmoud
+
+Zeina Helali
+
+Jodie Ehab
+
+Amira Farag
+
+Noura El Haywan
+
+Course: CSAI335 — Spring 2025 — New giza University
 
