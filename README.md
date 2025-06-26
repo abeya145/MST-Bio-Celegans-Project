@@ -60,6 +60,8 @@ Borůvka performed well on small datasets but slowed down on larger ones.
 
 Karger’s Algorithm worked differently — it gave a minimum cut, not an MST.
 
+Reeverse delete Algorithm was the worst as it was the slowest.
+
 We also created line plots showing how the execution time increased as dataset size grew.
 
  Tools We Used
